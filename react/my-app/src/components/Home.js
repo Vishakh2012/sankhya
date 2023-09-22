@@ -8,8 +8,8 @@ const Home = () => {
     <>
     <div className='fade-in'>
     <img src={logo}alt='logo' className='image'/>
-    <h2>Sankhya</h2>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat officiis magnam tenetur rerum laboriosam earum magni tempora facilis voluptatibus repellendus molestiae provident nostrum eos quidem porro, eius eum perspiciatis cupiditate? </p>
+    <h2 className='Hh'>Sankhya</h2>
+    <p className='para'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat officiis magnam tenetur rerum laboriosam earum magni tempora facilis voluptatibus repellendus molestiae provident nostrum eos quidem porro, eius eum perspiciatis cupiditate? </p>
     </div>
     </>
   )

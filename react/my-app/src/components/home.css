@@ -22,7 +22,10 @@
     height:200px;
     margin-bottom: 1.5rem;
   }
-  .h2{
+  .Hh{
     color: #174ea6;
-    font-family:cursive;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .para{
+    color:#000000;
   }
