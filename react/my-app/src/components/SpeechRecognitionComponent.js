@@ -3,9 +3,17 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 import styles from './Records.module.css'
 const SpeechRecognitionComponent = () => {
   const { transcript, resetTranscript, browserSupportsSpeechRecognition } = useSpeechRecognition();
-  // const handleSubmit = async(e)=>{
-  //   e.preventDefault();
-  // }
+  const handleSubmit = async(e)=>{
+    e.preventDefault();
+    console.log(transcript)
+    const respose = await fetch("", {
+      method : 'POST',
+      body : JSON.stringify({text:transcript}),
+      headers : {
+          'Content-Type' : "application/json"
+      }
+  })
+  }
   if (!browserSupportsSpeechRecognition) {
     return <div>Speech recognition is not supported by your browser</div>;
   }
@@ -20,7 +28,7 @@ const SpeechRecognitionComponent = () => {
     </div>
     <div className={styles.confirm}>
       Transcript: {transcript}
-      <button  className={styles.btn2}>Confirm</button>
+      <button onClick={handleSubmit} className={styles.btn2}>Confirm</button>
       </div>
     
     </div>
