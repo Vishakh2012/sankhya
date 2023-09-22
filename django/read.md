@@ -1,0 +1,1 @@
+this is the folder for django side of the project
