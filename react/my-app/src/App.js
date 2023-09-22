@@ -5,6 +5,7 @@ import "./App.css"
 import Auth from "./components/Auth"
 import SpeechRecognitionComponent from './components/SpeechRecognitionComponent';
 import BasicExample, { Navbar } from './components/Navbar';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/auth" element={<Auth />} />
         <Route path="/record" element={<SpeechRecognitionComponent />} />
+        <Route path ="/home" element ={<Home />} />
       </Routes>
     </BrowserRouter>
   );

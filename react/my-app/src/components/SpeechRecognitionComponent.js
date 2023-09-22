@@ -35,8 +35,8 @@ const SpeechRecognitionComponent = () => {
     <div classname='record'>
       <button onClick={start} style={{ backgroundColor: listening ? 'red' : '' }}disabled={listening} className='button-1'>Start Listening</button>
       <button onClick={stop} disabled={!listening} className='button-1'>Stop Listening</button>
-      <button onClick={resetTranscript}>Reset</button>
-      <div>Transcript: {transcript}</div>
+      <button onClick={resetTranscript} style={{backgroundColor:'red'}}>Reset</button>
+      <div className='trans'>Transcript: {transcript}</div>
     </div>
   );
 }
