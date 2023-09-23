@@ -7,6 +7,8 @@ import SpeechRecognitionComponent from './components/Speech/SpeechRecognitionCom
 import BasicExample, { Navbar } from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Pricing from './components/Pricing/Pricing';
+import { Analytics } from './components/Analytics/Analytics';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
         <Route path="/record" element={<SpeechRecognitionComponent />} />
         <Route path ="/" element ={<Home />} />
         <Route path ="/pricing" element ={<Pricing />} />
+        <Route path ="/analytics" element ={<Analytics />} />
       </Routes>
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }
