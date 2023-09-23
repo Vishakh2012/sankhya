@@ -15,7 +15,7 @@ export default function Cards() {
     <div className='cardgrp'>
       <div className='d1'>
     <MDBCard>
-      <MDBCardImage src='https://mdbootstrap.com/img/new/standard/nature/184.webp' position='top' alt='...' />
+      <MDBCardImage className='imgs' src='https://mdbootstrap.com/img/new/standard/nature/184.webp' position='top' alt='...' />
       <MDBCardBody>
         <MDBCardTitle>Feature 1</MDBCardTitle>
         <MDBCardText>
@@ -27,7 +27,7 @@ export default function Cards() {
     </div>
     <div className='d2'>
     <MDBCard >
-      <MDBCardImage src='https://mdbootstrap.com/img/new/standard/nature/184.webp' position='top' alt='...' />
+      <MDBCardImage className='imgs' src='https://mdbootstrap.com/img/new/standard/nature/184.webp' position='top' alt='...' />
       <MDBCardBody>
         <MDBCardTitle>Feature 2</MDBCardTitle>
         <MDBCardText>
@@ -39,7 +39,7 @@ export default function Cards() {
     </div>
     <div className='d3'>
     <MDBCard>
-      <MDBCardImage src='https://mdbootstrap.com/img/new/standard/nature/184.webp' position='top' alt='...' />
+      <MDBCardImage className='imgs' src='https://mdbootstrap.com/img/new/standard/nature/184.webp' position='top' alt='...' />
       <MDBCardBody>
         <MDBCardTitle>Feature 2</MDBCardTitle>
         <MDBCardText>

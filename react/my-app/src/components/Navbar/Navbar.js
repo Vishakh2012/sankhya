@@ -8,7 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 function BasicExample() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary" style={{fontFamily:'Montserrat, sans-serif'}}>
+    <Navbar expand="lg" className="bg-body-tertiary fixed-top" style={{fontFamily:'Montserrat, sans-serif'}}>
       <Container>
         <Navbar.Brand href="/" style={{color:'#0d6efd'}}>SANKHYA</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -7,15 +7,24 @@
 .d3{
     animation: slideInFromLeft3 1s ease-in-out;
 }
-
+.d1,.d2,.d3{
+  padding: 30px;
+}
 .cardgrp{
     display: flex;
     flex-direction: row;
     max-height: 80%;
-    padding: 20px;
+    padding: 40px;
     gap: 20px;
 }
   
+.imgs{
+  padding: 10px;
+  max-width: 600px;
+  max-height: 400px;
+  padding: 20px;
+}
+
   @keyframes slideInFromLeft1 {
     from {
       transform: translateX(-100%);
