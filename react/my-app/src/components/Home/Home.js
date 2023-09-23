@@ -32,10 +32,9 @@ const Home = () => {
       <div className='fade-in'>
         <div className='jus-logo'>
           <img src={logo} alt='logo' className='image' />
-          <h2 className='Hh'>Sankhya</h2>
+          <h2 className='Hh'>SANKHYA</h2>
         </div>
-
-        <p className='para'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat officiis magnam tenetur rerum laboriosam earum magni tempora facilis voluptatibus repellendus molestiae provident nostrum eos quidem porro, eius eum perspiciatis cupiditate? </p>
+        <p className='para'>At Sankhya, we're rewriting the business playbook. We're not just leveling the playing field; we're tilting it in your favor. Say goodbye to data disparities that only tech giants could afford. We're putting the same tools they use right at your fingertips, unlocking growth opportunities like never before.</p>
       </div>
       {showCards && <Cards />}
       {showFooter && <Footer />} 
