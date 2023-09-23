@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../../Picture2.png';
 import './home.css'
-import Footer from '../Footer/Footer';
+import Cards from '../Cards/Cards';
 
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
     <p className='para'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat officiis magnam tenetur rerum laboriosam earum magni tempora facilis voluptatibus repellendus molestiae provident nostrum eos quidem porro, eius eum perspiciatis cupiditate? </p>
     </div>
     <div>
-        
+        <Cards />
     </div>
     <Footer />
     </>
