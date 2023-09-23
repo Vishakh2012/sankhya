@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
-import BasicExample, { Navbar } from './components/Navbar/Navbar';
-import Auth from './components/Sign_Up/Auth';
-import Home from './components/Home/Home';
+import Auth from "./components/Sign_Up/Auth"
 import SpeechRecognitionComponent from './components/Speech/SpeechRecognitionComponent';
-
+import BasicExample, { Navbar } from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
+import Pricing from './components/Pricing/Pricing';
 
 function App() {
   return (
@@ -18,7 +18,8 @@ function App() {
       <Routes>
         <Route path="/auth" element={<Auth />} />
         <Route path="/record" element={<SpeechRecognitionComponent />} />
-        <Route path ="/home" element ={<Home />} />
+        <Route path ="/" element ={<Home />} />
+        <Route path ="/pricing" element ={<Pricing />} />
       </Routes>
     </BrowserRouter>
   );
