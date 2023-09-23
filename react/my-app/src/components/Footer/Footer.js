@@ -6,11 +6,7 @@ function Footer() {
     <footer className="footer">
       <p className="footer-text">© 2022 Company, Inc</p>
 
-      <a href="/" className="footer-logo">
-        <svg className="bi me-2" width="40" height="32">
-          <use xlinkHref="#bootstrap"></use>
-        </svg>
-      </a>
+
 
       <ul className="footer-nav">
         <li className="footer-nav-item"><a href="#" className="footer-nav-link">Home</a></li>
