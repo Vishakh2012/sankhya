@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
+import './Analytics.css'
 import BarChart from './Barchart' 
 export const Analytics = () => {
     // useEffect(()=>{
@@ -23,7 +24,7 @@ export const Analytics = () => {
     ]
   return (
     <div className="App">
-      <h1>JSON Bar Chart in React</h1>
+      <h1>Product V/S Quantity Purchased</h1>
       <BarChart data={jsonData} />
     </div>
   )
