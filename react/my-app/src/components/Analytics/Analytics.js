@@ -9,7 +9,10 @@ export const Analytics = () => {
     //         const result = response.json();
     //     }
     // },[])
-
+async function recommend(){
+  const response=await fetch('/');
+  const data=response.text();
+}
     const jsonData = [
         {
           "item": "Product A",
@@ -26,6 +29,10 @@ export const Analytics = () => {
     <div className="App">
       <h1>Product V/S Quantity Purchased</h1>
       <BarChart data={jsonData} />
+      <h1  className='reco's>Recommendations</h1>
+      <textarea id="myTextarea" name="myTextarea" readonly>{recommend()}</textarea>
+      <button onClick={recommend}>Give me Recommendations</button>
     </div>
   )
 }
+export default Analytics;
