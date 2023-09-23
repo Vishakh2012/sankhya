@@ -1,0 +1,54 @@
+.d1{
+    animation: slideInFromLeft1 1s ease-in-out;
+  }
+.d2{
+    animation: slideInFromLeft2 1s ease-in-out;
+}
+.d3{
+    animation: slideInFromLeft3 1s ease-in-out;
+}
+
+.cardgrp{
+    display: flex;
+    flex-direction: row;
+    max-height: 80%;
+    padding: 20px;
+    gap: 20px;
+}
+  
+  @keyframes slideInFromLeft1 {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideInFromLeft2 {
+    from {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideInFromLeft3 {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @media (max-width: 576px) {
+    .cardgrp {
+      display: flex;
+      flex-direction: column;
+    }
+  }

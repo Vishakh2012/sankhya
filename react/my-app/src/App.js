@@ -2,10 +2,11 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
-import Auth from "./components/Auth"
-import SpeechRecognitionComponent from './components/SpeechRecognitionComponent';
-import BasicExample, { Navbar } from './components/Navbar';
-import Home from './components/Home';
+import BasicExample, { Navbar } from './components/Navbar/Navbar';
+import Auth from './components/Sign_Up/Auth';
+import Home from './components/Home/Home';
+import SpeechRecognitionComponent from './components/Speech/SpeechRecognitionComponent';
+
 
 function App() {
   return (
