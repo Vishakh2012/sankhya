@@ -1,17 +1,55 @@
-
 import React, { useState } from "react"
-import './Auth.css'
-export default function Auth (props) {
-  let [authMode, setAuthMode] = useState("signin")
+import { useRef } from "react";
+import { useContext } from "react";
+import { context } from "../../context/Provider";
+
+export default function Auth(props) {
+  //refrence varibles
+  const ctx = useContext(context);
+  const userNameRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const authuserRef = useRef();
+  const authpasswordRef = useRef();
+
+  //handle submit function request to backend
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const jsondata = {
+      username: userNameRef.current.value,
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    };
+    const response = await fetch("http://localhost:8000/api/signup/", {
+      method: "POST",
+      mode: "cors",
+      body: JSON.stringify(jsondata),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+    } else {
+      console.log("something went wrong");
+    }
+    emailRef.current.value = "";
+    passwordRef.current.value = "";
+    userNameRef.current.value = "";
+  };
+  let [authMode, setAuthMode] = useState("signin");
 
   const changeAuthMode = () => {
-    setAuthMode(authMode === "signin" ? "signup" : "signin")
-  }
+    setAuthMode(authMode === "signin" ? "signup" : "signin");
+  };
+
+  console.log(ctx.user);
 
   if (authMode === "signin") {
-    return (
-      <div className="Auth-form-container">
-        <form className="Auth-form">
+    return ( 
+      <div className="Auth-form-container mx-5 mt-5">
+        <form className="Auth-form" onSubmit={ctx.login}>
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Sign In</h3>
             <div className="text-center">
@@ -21,9 +59,11 @@ export default function Auth (props) {
               </span>
             </div>
             <div className="form-group mt-3">
-              <label>Email address</label>
+              <label>username</label>
               <input
-                type="email"
+                name="username"
+                ref={authuserRef}
+                type="text"
                 className="form-control mt-1"
                 placeholder="Enter email"
               />
@@ -31,6 +71,8 @@ export default function Auth (props) {
             <div className="form-group mt-3">
               <label>Password</label>
               <input
+                name="password"
+                ref={authpasswordRef}
                 type="password"
                 className="form-control mt-1"
                 placeholder="Enter password"
@@ -47,14 +89,14 @@ export default function Auth (props) {
           </div>
         </form>
       </div>
-    )
+    );
   }
 
   return (
-    <div className="Auth-form-container">
-      <form className="Auth-form">
+    <div className="Auth-form-container mx-5 mt-5">
+      <form className="Auth-form" onSubmit={handleSubmit}>
         <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Sign In</h3>
+          <h3 className="Auth-form-title">Sign Up</h3>
           <div className="text-center">
             Already registered?{" "}
             <span className="link-primary" onClick={changeAuthMode}>
@@ -62,9 +104,10 @@ export default function Auth (props) {
             </span>
           </div>
           <div className="form-group mt-3">
-            <label>Full Name</label>
+            <label>UserName</label>
             <input
-              type="email"
+              ref={userNameRef}
+              type="text"
               className="form-control mt-1"
               placeholder="e.g Jane Doe"
             />
@@ -72,6 +115,7 @@ export default function Auth (props) {
           <div className="form-group mt-3">
             <label>Email address</label>
             <input
+              ref={emailRef}
               type="email"
               className="form-control mt-1"
               placeholder="Email Address"
@@ -80,6 +124,7 @@ export default function Auth (props) {
           <div className="form-group mt-3">
             <label>Password</label>
             <input
+              ref={passwordRef}
               type="password"
               className="form-control mt-1"
               placeholder="Password"
@@ -96,5 +141,5 @@ export default function Auth (props) {
         </div>
       </form>
     </div>
-  )
+  );
 }
