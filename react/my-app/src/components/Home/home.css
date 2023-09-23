@@ -11,7 +11,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
   overflow-x: hidden; /* Hide horizontal overflow */
-  min-height: 170vh; /* Set a minimum height equal to the viewport height */
+  min-height: 150vh; /* Set a minimum height equal to the viewport height */
   
 }
 
