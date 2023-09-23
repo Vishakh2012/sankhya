@@ -30,8 +30,11 @@ async function recommend(){
       <h1>Product V/S Quantity Purchased</h1>
       <BarChart data={jsonData} />
       <h1  className='reco's>Recommendations</h1>
-      <textarea id="myTextarea" name="myTextarea" readonly>{recommend()}</textarea>
-      <button onClick={recommend}>Give me Recommendations</button>
+      <div> <textarea id="myTextarea" name="myTextarea" readonly>{recommend()}</textarea>
+      <button onClick={recommend}>Give me Recommendations</button></div>
+      <div><textarea id="myTextarea" name="myTextarea" readonly>{recommend()}</textarea>
+      <button onClick={recommend}>Give me Recommendations</button></div>
+      
     </div>
   )
 }

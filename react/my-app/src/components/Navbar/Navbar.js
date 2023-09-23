@@ -13,7 +13,8 @@ function BasicExample() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/pricing">Loans</Nav.Link>
+            <Nav.Link href="/analytics">Analytics</Nav.Link>
             {!ctx.authenticated && <Nav.Link href="/auth">Log In</Nav.Link>}
             {ctx.authenticated && <Nav.Link>Log Out</Nav.Link>}
             {ctx.authenticated && (
