@@ -1,12 +1,14 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Signup from './signup';
 
 
 function BasicExample() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
+        <Signup/>
         <Navbar.Brand href="/">SANKHYA</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
