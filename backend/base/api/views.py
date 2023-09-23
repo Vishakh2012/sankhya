@@ -8,6 +8,7 @@ from .serializers import InventoryItemSerializer
 from ..models import InventoryItem
 from rest_framework import status
 from .textjson import t2j
+from .analyze import ask_about, random_sug
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -66,7 +67,9 @@ def get_data(request):
             
             # Handle the case where the user does not exist
         return Response(status = status.HTTP_404_NOT_FOUND)
-
+    
+    
+#method for adding items to the database to the voice
 @api_view
 def add_items(request):
     data = request.data
@@ -89,7 +92,14 @@ def add_items(request):
             return Response(status= status.HTTP_200_OK)
         except:
             return Response(status = status.HTTP_404_NOT_FOUND)
-            
+        
+@api_view       
+def get_random_suggestions(request):
+    data = request.data
+    current_user = request.user
+    if request.method == 'GET':
+             
+
             
                 
             
