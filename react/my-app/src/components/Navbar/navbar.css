@@ -1,0 +1,22 @@
+/* In your CSS file or in a style block in your component */
+.nav-link {
+    position: relative; /* Needed for positioning the pseudo-element */
+    text-decoration: none; /* Remove default underline */
+    color: #000; /* Set link color */
+  }
+  
+  .nav-link::before {
+    content: ''; /* Add an empty content */
+    position: absolute;
+    left: 0;
+    bottom: -4px; /* Adjust the space between text and underline */
+    width: 0; /* Start with no width */
+    height: 2px; /* Set the height and style of the underline */
+    background-color: #0d6efd; /* Color of the underline */
+    transition: width 0.3s ease-in-out; /* Add a smooth transition */
+  }
+  
+  .nav-link:hover::before {
+    width: 100%; /* Expand the underline on hover */
+  }
+  
