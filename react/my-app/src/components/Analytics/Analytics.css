@@ -9,11 +9,15 @@
   
   h1 {
     margin-bottom: 2rem; /* Slightly reduce the margin for smaller screens */
+    color: #0d6efd;
+  }
+  .reco{
+    margin-top: 2rem;
   }
   
   /* Add media queries for responsive styles */
   @media screen and (max-width: 768px) {
-    h1 {
+    h1,.reco {
       font-size: 1.5rem; /* Adjust font size for smaller screens */
       margin-bottom: 1rem; /* Further reduce the margin */
     }
@@ -25,4 +29,20 @@
       margin-bottom: 0.5rem; /* Reduce the margin further */
     }
   }
+
+  textarea {
+    width: 100%;
+    max-width: 400px;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none; /* Prevent textarea resizing */
+}
+
+textarea:focus {
+    outline: none; /* Remove the default focus outline */
+    border-color: #007bff; /* Change border color when focused */
+}
   

@@ -22,7 +22,8 @@ const SpeechRecognitionComponent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(transcript);
-    const response = await fetch('', {
+    const response = await fetch('http://localhost:8000/api/add_item/', {
+      mode : 'cors',
       method: 'POST',
       body: JSON.stringify({ text: transcript }),
       headers: {

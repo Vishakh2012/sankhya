@@ -7,8 +7,7 @@ import SpeechRecognitionComponent from './components/Speech/SpeechRecognitionCom
 import BasicExample, { Navbar } from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Pricing from './components/Pricing/Pricing';
-import { Analytics } from './components/Analytics/Analytics';
-import Footer from './components/Footer/Footer';
+import  Analytics from './components/Analytics/Analytics';
 
 function App() {
   return (
