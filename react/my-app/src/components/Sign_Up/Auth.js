@@ -1,5 +1,6 @@
 
 import React, { useState } from "react"
+<<<<<<< HEAD:react/my-app/src/components/Auth.js
 import { useRef } from "react";
 import { useContext } from "react";
 import { context } from "../context/Provider";
@@ -40,6 +41,11 @@ export default function Auth(props) {
     userNameRef.current.value = "";
   };
   let [authMode, setAuthMode] = useState("signin");
+=======
+import './Auth.css'
+export default function Auth (props) {
+  let [authMode, setAuthMode] = useState("signin")
+>>>>>>> ff9f38da41cabf65864d0414808f406ae3ec8f3d:react/my-app/src/components/Sign_Up/Auth.js
 
   const changeAuthMode = () => {
     setAuthMode(authMode === "signin" ? "signup" : "signin");
