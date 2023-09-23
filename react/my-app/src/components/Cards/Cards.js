@@ -18,16 +18,19 @@ import {
 export default function Cards() {
   return (
     <>
-    <h1>Features</h1>
+    <p className='heading'>Features</p>
     <div className='cardgrp'>
       
       <div className='d1'>
     <MDBCard>
       <MDBCardImage className='imgs' src={logo1} position='top' alt='...' />
       <MDBCardBody>
-        <MDBCardTitle>Data Empowerment</MDBCardTitle>
+        <MDBCardTitle>
+          <br /><br />Data Empowerment</MDBCardTitle>
         <MDBCardText>
+         <br />
         Empowering Small Businesses with Data Analytics: Unleash Your Potential!
+        <br /><br />
         </MDBCardText>
         <MDBBtn href='#'>Know More</MDBBtn>
       </MDBCardBody>
