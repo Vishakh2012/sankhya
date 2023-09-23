@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&family=Open+Sans&display=swap');
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.d1{
+    animation: slideInFromLeft1 1s ease-in-out;
+  }
+.d2{
+    animation: slideInFromLeft2 1s ease-in-out;
+}
+.d3{
+    animation: slideInFromLeft3 1s ease-in-out;
+}
+.d1,.d2,.d3{
+  padding: 30px;
+  width : 40%;
+  flex-basis: 1;
+}
+
+.cardgrp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 40px;
+    gap: 20px;
+}
+  
+.imgs{
+  padding: 10px;
+  max-width: 80%;
+  max-height:80%;
+  /* margin:2rem 2rem; */
+}
+
+  @keyframes slideInFromLeft1 {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideInFromLeft2 {
+    from {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideInFromLeft3 {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @media (max-width: 576px) {
+    .cardgrp {
+      flex-direction: column;
+    }
+  }
+
+  h1{
+    opacity: 0;
+    transform: translateX(100%);
+    animation: fadeInFromRight 1s ease-in-out forwards;
+    margin :0rem 8rem;
+    color: #0d6efd;
+  
+   }
+  
+  @keyframes fadeInFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+
+
+
+
+
