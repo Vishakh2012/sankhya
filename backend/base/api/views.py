@@ -9,7 +9,7 @@ from ..models import InventoryItem
 from rest_framework import status
 from .textjson import t2j
 import json
-#from .analyze import ask_about, random_sug
+from .analyze import ask_about, random_sug
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -119,11 +119,20 @@ def add_items(request):
         except:
             return Response(status = status.HTTP_404_NOT_FOUND)
         
-# @api_view       
-# def get_random_suggestions(request):
-#     data = request.data
-#     current_user = request.user
-#     if request.method == 'GET':
+@api_view       
+def get_random_suggestions(request):
+    data = request.data
+    current_user = request.user
+    if request.method == 'GET':
+        return Response({"text" : random_sug()})
+             
+@api_view       
+def get_insights(request):
+    data = request.data
+    current_user = request.user
+    if request.method == 'POST':
+        return Response({"text" : ask_about(data['text'])}, status= status.HTTP_200_OK)
+    return Response(status = status.HTTP_400_BAD_REQUEST)
              
 
             

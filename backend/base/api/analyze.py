@@ -11,27 +11,20 @@ item_df = read_frame(items)
 
 from langchain.agents import AgentType
 
+agent = create_pandas_dataframe_agent(OpenAI(temperature = 0.2), df = item_df, 
+                                      verbose = False, 
+                                      return_immediate_steps = False,
+                                      AgentType = AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+                                    )
 
-def ask_about(prompt,current_user):
+
+def ask_about(prompt):
     p = "behave as a data analyst for a small shop use the data provided to give analytics to the business and give output a if you are talking to him"
     p += prompt
-    item_df = item_df[item_df['user'] == current_user]
-    agent = create_pandas_dataframe_agent(OpenAI(temperature = 0.2), df = item_df, 
-                                      verbose = False, 
-                                      return_immediate_steps = False,
-                                      AgentType = AgentType.ZERO_SHOT_REACT_DESCRIPTION,
-                                    )
-    
     return(agent(p)['output'])
 
-def random_sug(current_user):
+def random_sug():
     prompt = "behave as a data analyst for a small shop use the data provided to give analytics to the business and give output a if you are talking to him"
     prompt += "Give random insights into the data that might be useful to me who is a shop keeper in the future"
-    item_df = item_df[item_df['user'] == current_user]
-    agent = create_pandas_dataframe_agent(OpenAI(temperature = 0.2), df = item_df, 
-                                      verbose = False, 
-                                      return_immediate_steps = False,
-                                      AgentType = AgentType.ZERO_SHOT_REACT_DESCRIPTION,
-                                    )
     return agent(prompt)['output']
 
