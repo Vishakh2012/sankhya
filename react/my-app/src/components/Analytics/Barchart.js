@@ -1,13 +1,13 @@
+// BarChart.js
+
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
-const BarChart = ({ data }) => {
+const BarChart = ({ data, width, height }) => {
   const svgRef = useRef(null);
 
   useEffect(() => {
     const svg = d3.select(svgRef.current);
-    const width = 400; // Set the desired width
-    const height = 300; // Set the desired height
     const margin = { top: 20, right: 20, bottom: 40, left: 40 }; // Define margins
 
     const xScale = d3
@@ -41,7 +41,10 @@ const BarChart = ({ data }) => {
     svg
       .append('g')
       .attr('transform', `translate(0, ${height - margin.bottom})`)
-      .call(d3.axisBottom(xScale));
+      .call(d3.axisBottom(xScale))
+      .selectAll('text')
+      .style('text-anchor', 'middle')
+      .attr('transform', 'rotate(0)');
 
     // Y-axis
     svg
@@ -56,7 +59,7 @@ const BarChart = ({ data }) => {
       .attr('y', height)
       .attr('dy', margin.bottom / 2)
       .style('text-anchor', 'middle')
-      .text('X-Axis Label');
+      .text('Products');
 
     // Y-axis label
     svg
@@ -66,8 +69,8 @@ const BarChart = ({ data }) => {
       .attr('y', 0)
       .attr('dy', -margin.left / 2)
       .style('text-anchor', 'middle')
-      .text('Y-Axis Label');
-  }, [data]);
+      .text('Quantity');
+  }, [data, width, height]);
 
   return <svg ref={svgRef}></svg>;
 };

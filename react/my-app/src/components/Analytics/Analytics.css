@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    margin-top: 12rem;
   }
   
   h1 {
@@ -17,20 +17,21 @@
   
   /* Add media queries for responsive styles */
   @media screen and (max-width: 768px) {
-    h1,.reco {
-      font-size: 1.5rem; /* Adjust font size for smaller screens */
-      margin-bottom: 1rem; /* Further reduce the margin */
+    h1,
+    .reco {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
   }
   
   @media screen and (max-width: 480px) {
     h1 {
-      font-size: 1.2rem; /* Adjust font size for even smaller screens */
-      margin-bottom: 0.5rem; /* Reduce the margin further */
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
     }
   }
 
-  textarea {
+.myTextarea {
     width: 100%;
     max-width: 400px;
     height: 150px;
@@ -41,8 +42,38 @@
     resize: none; /* Prevent textarea resizing */
 }
 
-textarea:focus {
+.myTextarea:focus {
     outline: none; /* Remove the default focus outline */
     border-color: #007bff; /* Change border color when focused */
 }
+
+.myTextarea1{
+  width: 100%;
+    max-width: 400px;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+
+}
+.myTextarea1:focus {
+  outline: none; /* Remove the default focus outline */
+  border-color: #007bff; /* Change border color when focused */
+}
+
+.chart-container {
+  margin-bottom: 2rem;
   
+}
+.text{
+  margin-bottom: 2rem;
+  width:60%;
+  display: flex;
+  flex-direction: column;
+}
+.button{
+  width:30%;
+  margin-top: 3rem;
+}
