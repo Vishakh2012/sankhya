@@ -8,7 +8,8 @@ from .serializers import InventoryItemSerializer
 from ..models import InventoryItem
 from rest_framework import status
 from .textjson import t2j
-from .analyze import ask_about, random_sug
+import json
+#from .analyze import ask_about, random_sug
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -68,36 +69,61 @@ def get_data(request):
             # Handle the case where the user does not exist
         return Response(status = status.HTTP_404_NOT_FOUND)
     
-    
+# @api_view(['POST'])
+# def login_view(request):
+#     if(request.method == 'POST'):
+#         return Response(status=status.HTTP_200_OK)
+#     return Response(status=status.HTTP_400_BAD_REQUEST)
+        
 #method for adding items to the database to the voice
-@api_view
+@api_view(['POST'])
 def add_items(request):
     data = request.data
+    print(data)
     current_user = request.user
+    print(current_user)
     if request.method == 'POST':
-        if not current_user.is_authenticated:
-            return Response("Authentication required", status=status.HTTP_401_UNAUTHORIZED)
-        
-        text = t2j(data['bill'])
+        # if not current_user.is_authenticated:
+        #     return Response("Authentication required", status=status.HTTP_401_UNAUTHORIZED)
+        print("hello")
+        text = t2j(data['text'])
+        print(type(text))
         try:
-            for item in data['billitem']:
-                item_ = InventoryItem(
-                    user = current_user,
-                    item = item['item'],
-                    quantity = item['quantity'],
-                    units = item['unit']
-                )
+            for ite in text:
+                print(len(ite[0][1]))
+                for i in range(len(ite[1])):
+                    print(ite[1][i].item)
+                    item_ = InventoryItem(
+                        item = str(ite[1][i].item),
+                        quantity = float(ite[1][i].quantity),
+                        units = str(ite[1][i].unit)
+                    )
+                    item_.save()
+            
+            # Iterate over the list and print item details
+            # for item in bill_items:
+            #     print(f"Item: {item['item']}")
+            #     print(f"Quantity: {item['quantity']} {item['unit']}")
+            #     print("---")
+            # for item in text['billitem']:
+            #     print(item)
+            #     item_ = InventoryItem(
+    
+            #         item = item['item'],
+            #         quantity = item['quantity'],
+            #         units = item['unit']
+            #     )
                 
-                item_.save()
+            #     item_.save()
             return Response(status= status.HTTP_200_OK)
         except:
             return Response(status = status.HTTP_404_NOT_FOUND)
         
-@api_view       
-def get_random_suggestions(request):
-    data = request.data
-    current_user = request.user
-    if request.method == 'GET':
+# @api_view       
+# def get_random_suggestions(request):
+#     data = request.data
+#     current_user = request.user
+#     if request.method == 'GET':
              
 
             

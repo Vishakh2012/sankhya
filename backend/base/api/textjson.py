@@ -44,7 +44,7 @@ def t2j(text: str):
 
     output = model(_input.to_string())
     print(output)
-    parser.parse(output)
+    output = parser.parse(output)
     return output
     
 
